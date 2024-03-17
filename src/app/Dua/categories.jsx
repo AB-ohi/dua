@@ -1,6 +1,182 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { getCategories } from "../utils/categories";
+import {
+  getSubCategories1,
+  getSubCategories10,
+  getSubCategories2,
+  getSubCategories3,
+  getSubCategories4,
+  getSubCategories5,
+  getSubCategories6,
+  getSubCategories7,
+  getSubCategories8,
+  getSubCategories9,
+} from "../utils/subCategory";
+import "./cate.css";
+import Image from "next/image";
+import dua from "../../../public/img/duar_gurutto.svg";
+import zikirer from "../../../public/img/zikirer_fozilot.svg";
+import duaKobul from "../../../public/img/dua_kobuler_somoy.svg";
+import jaderDoaKObulHoi from "../../../public/img/jader_dua_kobul_hoy.svg";
+import morning from "../../../public/img/sokal_sondha.svg";
+import sleep from "../../../public/img/ghum.svg";
+import cloths from "../../../public/img/poshak.svg";
+import home from "../../../public/img/bari.svg";
+import toilet from "../../../public/img/toilet.svg";
+import azan from "../../../public/img/azan_ikamot.svg";
 
 const Categories = () => {
+  const [subCategories1, setSubCategories1] = useState([]);
+  console.log(subCategories1);
+  const [subCategories2, setSubCategories2] = useState([]);
+  const [subCategories3, setSubCategories3] = useState([]);
+  const [subCategories4, setSubCategories4] = useState([]);
+  const [subCategories5, setSubCategories5] = useState([]);
+  const [subCategories6, setSubCategories6] = useState([]);
+  const [subCategories7, setSubCategories7] = useState([]);
+  const [subCategories9, setSubCategories9] = useState([]);
+  const [subCategories10, setSubCategories10] = useState([]);
+  const [subCategories8, setSubCategories8] = useState([]);
+
+  const [subCategories, setSubCategories] = useState([]);
+  // console.log(categories)
+  // console.log(subCategories)
+
+  const [showDuImportance, setShowDuImportance] = useState(true);
+  const [showDuExcellence, setShowDuExcellence] = useState(true);
+  const [showDuTime, setShowDuTime] = useState(true);
+  const [showDuAcceptance, setShowDuAcceptance] = useState(true);
+  const [showDuMorning, setShowDuMorning] = useState(true);
+  const [showDuSleep, setShowDuSleep] = useState(true);
+  const [showDuCloths, setShowDuCloths] = useState(true);
+  const [showDuHome, setShowDuHome] = useState(true);
+  const [showDuToilet, setShowDuToilet] = useState(true);
+  const [showAdhaan, setShowAdhaan] = useState(true);
+
+  useEffect(() => {
+    const fetchCategoriesData = async () => {
+      try {
+        const useData = await getCategories();
+        setSubCategories(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchCategoriesData();
+  }, []);
+
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories1();
+        setSubCategories1(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories2();
+        setSubCategories2(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories3();
+        setSubCategories3(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories4();
+        setSubCategories4(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories5();
+        setSubCategories5(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories6();
+        setSubCategories6(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories7();
+        setSubCategories7(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories8();
+        setSubCategories8(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories9();
+        setSubCategories9(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
+  useEffect(() => {
+    const fetchSubCategoriesData = async () => {
+      try {
+        const useData = await getSubCategories10();
+        setSubCategories10(useData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSubCategoriesData();
+  }, []);
   return (
     <div className="w-[25%]">
       <div className="w-[90%] m-auto">
@@ -27,7 +203,450 @@ const Categories = () => {
             />
           </div>
           <div className="h-[82.5vh] overflow-y-auto overflow-x-hidden">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium mollitia non iure nobis dolor obcaecati asperiores soluta. Nobis doloribus iusto rem odio incidunt delectus debitis totam, molestiae iure, voluptatem voluptatibus officiis cum architecto perspiciatis impedit laboriosam fugit repudiandae? Labore sit modi eveniet totam nihil incidunt et deserunt dolorem excepturi autem ipsum ea iure consectetur aperiam animi, blanditiis expedita accusantium nobis consequuntur maiores dolor alias exercitationem vitae libero! Dolorem, earum. Neque dolores sapiente deleniti esse laboriosam perferendis ex consectetur, quae facilis aut enim id, nisi provident repudiandae vel? Doloribus laudantium quasi eius deserunt sed quos recusandae, facere esse. Aut temporibus ratione delectus quia vel officiis animi quas natus? Aliquam veritatis nam ullam, nemo debitis quae cumque tenetur doloribus obcaecati dolores cum quos repellendus sint et alias. Rerum similique debitis pariatur ipsum animi molestias in, tempora quo vitae exercitationem. Ad, rerum. Quas eius numquam dolorem magnam temporibus dolore enim! Voluptatem quisquam iusto neque enim recusandae animi consectetur impedit eos aut eum. Ratione non minima quis ipsa repudiandae excepturi quidem illum esse saepe, nobis veniam. Impedit eligendi, dolorem odio illo est doloremque! Atque ut quasi beatae deserunt. Facilis libero quo doloremque quos aliquam, expedita, porro cumque modi eos nesciunt error exercitationem voluptas fugiat nulla corporis beatae et ratione at facere. Debitis voluptas blanditiis numquam sint perspiciatis, consequatur quae repellat enim ipsam ex! Adipisci fuga vitae error minus, incidunt itaque maiores dignissimos aliquam aliquid sequi qui neque tenetur? Similique accusantium deserunt veniam, ad voluptatum nulla nisi nihil error incidunt tempore consequatur sapiente provident obcaecati tenetur vel unde commodi, corporis sint minima, vero deleniti voluptate minus dolorum quaerat. Aperiam, accusamus excepturi quibusdam maiores velit ea fugiat dolorem, delectus corporis, expedita eaque? Aliquam a harum velit, ex laboriosam, pariatur voluptate eveniet soluta assumenda voluptates, minus dolor beatae et maxime enim accusamus. Ea officia quidem animi corporis deleniti, alias assumenda, sint delectus eos corrupti aperiam, eveniet nostrum veniam! Ea pariatur totam facere unde quidem debitis dolorum delectus distinctio aperiam mollitia consequatur non nemo excepturi sed neque perferendis iste nisi at, asperiores ad. Accusamus hic, at nisi labore distinctio quae atque sapiente dignissimos vitae quibusdam repudiandae autem quidem! Quas inventore impedit voluptatem et ex! Atque corporis error dolore blanditiis nesciunt quod beatae officiis harum ullam unde et optio repellendus nam alias sequi eligendi, sit totam? A eligendi, quod assumenda, placeat numquam corporis dignissimos ratione illo optio corrupti harum distinctio at facilis laborum reiciendis nam. Labore blanditiis suscipit cumque ut dolor nobis facere consequatur eaque quas officia, omnis sit tenetur repudiandae dicta. Eum a consequuntur voluptates, quisquam harum mollitia error aliquam eligendi molestiae quibusdam culpa repellat. Quia, eum eos? Adipisci saepe et cupiditate, sed repudiandae optio praesentium. Quos, corporis itaque maxime nemo vel qui odit, aspernatur cum ducimus commodi beatae rerum exercitationem aperiam dignissimos libero corrupti ea incidunt, asperiores dolorum accusantium sequi cumque error! Doloremque magnam architecto quasi consequatur eaque iure hic reprehenderit, atque quaerat eos labore inventore cum saepe error cumque laudantium itaque, nihil nobis possimus totam quam ad! Sunt ea minima repellat sed facilis! Dolores, amet cumque. Assumenda, quam necessitatibus odit, quaerat laboriosam soluta aut provident incidunt fugit repudiandae totam? Sed aut delectus facilis amet, dicta sint, cum a cupiditate nobis earum id exercitationem officia. Expedita repellat aspernatur quasi quidem tempora quod placeat accusamus, sed facilis provident officiis numquam sunt ipsam consequatur a ab totam. Quia exercitationem maiores natus commodi, minus voluptatem maxime earum quas quod velit fugiat quidem labore facere porro repellat nobis molestiae quisquam nisi! Voluptates placeat nobis adipisci ducimus officiis, accusamus officia natus illo nisi, illum quae mollitia voluptas aspernatur quos. Repellendus distinctio, quis iste, cum ipsum obcaecati neque numquam voluptatum quas hic a inventore nam quam. Corporis fugiat qui blanditiis vero, voluptate est aut natus delectus debitis obcaecati similique consequatur nisi incidunt deserunt repellat quasi soluta inventore sed eum. Laboriosam consequatur quasi fuga aut ullam nobis nesciunt explicabo. Voluptate ratione maxime, eum voluptates mollitia vero nesciunt. Ex, nam! Illo deserunt nemo minus nisi possimus id, fuga sequi vero non ipsa praesentium repellat magnam natus vel quam a pariatur dolores blanditiis debitis cum eaque eligendi dolor accusantium voluptatum. Inventore voluptatibus commodi debitis reprehenderit blanditiis ipsa quibusdam, assumenda, esse exercitationem pariatur nemo quos, facere fugit laborum dolorem maiores error perspiciatis a facilis enim nostrum minima.</p>
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuImportance ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuImportance(!showDuImportance)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={dua} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Dua Importance</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :7
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>21</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuImportance ? "hidden" : "visible"}`}>
+                {subCategories1.map((subCategory) => (
+                  <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuExcellence ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuExcellence(!showDuExcellence)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={zikirer} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">
+                        {/* // eslint-disable-next-line react/no-unescaped-entities
+                        Dua's Excellence */}
+                      </h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :1
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>15</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuExcellence ? "hidden" : "visible"}`}>
+                {subCategories2.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuTime ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuTime(!showDuTime)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={duaKobul} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Time of Dua</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :1
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>30</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuTime ? "hidden" : "visible"}`}>
+                {subCategories3.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuAcceptance ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuAcceptance(!showDuAcceptance)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={jaderDoaKObulHoi} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Dua Acceptance</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :1
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>14</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuAcceptance ? "hidden" : "visible"}`}>
+                {subCategories4.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuMorning ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuMorning(!showDuMorning)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={morning} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">
+                        Morning & Evening
+                      </h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :3
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>53</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuMorning ? "hidden" : "visible"}`}>
+                {subCategories5.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuSleep ?"text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuSleep(!showDuSleep)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={sleep} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Sleep</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :2
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>35</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuSleep ? "hidden" : "visible"}`}>
+                {subCategories6.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuCloths ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuCloths(!showDuCloths)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={cloths} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Cloths</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :1
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>8</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuCloths ? "hidden" : "visible"}`}>
+                {subCategories7.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuHome ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowDuHome(!showDuHome)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={home} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Home</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories:2
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>6</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuHome ? "hidden" : "visible"}`}>
+                {subCategories8.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showDuToilet ? "close-menu" : "open-menu"
+                  }, text-black flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg`}
+                  onClick={() => setShowDuToilet(!showDuToilet)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={toilet} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Toilet</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :1
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>2</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showDuToilet ? "hidden" : "visible"}`}>
+                {subCategories9.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="cat-list">
+              <Link href="">
+                <div
+                  className={`${
+                    showAdhaan ? "text-black flex justify-between bg-white w-[90%] m-auto mt-3 p-2 rounded-lg hover:bg-slate-100" : "text-black hover:bg-slate-100 flex justify-between bg-slate-100 w-[90%] m-auto mt-3 p-2 rounded-lg"
+                  }`}
+                  onClick={() => setShowAdhaan(!showAdhaan)}
+                >
+                  <div className="flex items-center gap-[5px]">
+                    <div className="bg-white p-2 rounded-lg">
+                      <Image src={azan} alt="img" />
+                    </div>
+
+                    <div>
+                      <h1 className="font-semibold text-lg">Adhaan & Iqamah</h1>
+                      <p className="text-slate-400 text-[15px]">
+                        subcategories :4
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <p>7</p>
+                    <p className="text-slate-400 text-[15px]">Duas</p>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${showAdhaan ? "hidden" : "visible"}`}>
+                {subCategories10.map((subCategory) => (
+                 <div className=" w-[85%] flex m-auto  items-center" key={subCategory.id}>
+                    <div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[5px] p-[2px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                      <div className="w-[3px] p-[1px] rounded-full mb-1 bg-[#1FA45B]"></div>
+                    </div>
+                    <p className="text-black  my-1 text-[15px] font-semibold w-96 overflow-hidden">
+                      {subCategory.subcat_name_en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import Sidebar from './sidebar';
 import Categories from './categories';
 import Settings from './Settings';
 
-import DuaBody from './DuaBody';
+import DuaBody from './[DuaBody]';
 
 const DuaPage = () => {
     return (
